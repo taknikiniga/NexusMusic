@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold (modifier = Modifier.fillMaxSize()) { innerPadding ->
 
                     Surface(modifier = Modifier.padding(innerPadding)) {
-                        Text("Radhee Radhee")
+
 
                     }
                 }
