@@ -32,7 +32,6 @@ import androidx.compose.ui.unit.dp
 import com.player.presentation.R
 import com.player.presentation.ui.theme.NexusMusicTheme
 
-
 @Composable
 fun MusicComp(
     modifier: Modifier = Modifier,

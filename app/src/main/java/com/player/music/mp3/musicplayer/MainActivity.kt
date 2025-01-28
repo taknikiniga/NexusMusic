@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import com.player.presentation.ui.navigaiton.NexusMusicApp
 import com.player.presentation.ui.theme.NexusMusicTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,14 +22,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-           NexusMusicTheme {
-                Scaffold (modifier = Modifier.fillMaxSize()) { innerPadding ->
+            NexusMusicTheme() {
+                Surface {
+                    NexusMusicApp()
 
-                    Surface(modifier = Modifier.padding(innerPadding)) {
-
-
-                    }
                 }
+
             }
         }
     }

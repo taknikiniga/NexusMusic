@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("kotlinx-serialization")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -56,6 +58,17 @@ dependencies {
     /*Google Font*/
     implementation(libs.androidx.ui.text.google.fonts)
 
+
+    /*
+  * Serialization
+  * */
+
+    // JSON serialization library, works with the Kotlin serialization plugin
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.navigation.compose)
+
+    /*Coil Library*/
+    implementation(libs.coil.compose)
 
 
     testImplementation(libs.junit)

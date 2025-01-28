@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Nexus Music</string>
+
+
+    <!--Pager Content Titles-->
+
+    <string name="title_1">Lorem Ipsum is simply dummy</string>
+    <string name="title_2">Lorem Ipsum is simply dummy</string>
+    <string name="title_3">Lorem Ipsum is simply dummy</string>
+
+    <!--Pager Content Description-->
+
+    <string name="des_1">Lorem Ipsum is simply dummy text of the
+printing and typesetting industry. Lorem
+ Ipsum has been</string>
+
+    <string name="des_2">Lorem Ipsum is simply dummy text of the
+printing and typesetting industry. Lorem
+ Ipsum has been</string>
+
+    <string name="des_3">Lorem Ipsum is simply dummy text of the
+printing and typesetting industry. Lorem
+ Ipsum has been</string>
+
+</resources>
