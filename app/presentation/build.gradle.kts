@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id("kotlinx-serialization")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
     alias(libs.plugins.compose.compiler)
 }
 
@@ -58,6 +60,8 @@ dependencies {
     /*Google Font*/
     implementation(libs.androidx.ui.text.google.fonts)
 
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
 
     /*
   * Serialization
@@ -69,6 +73,28 @@ dependencies {
 
     /*Coil Library*/
     implementation(libs.coil.compose)
+
+    /*Exo Player*/
+    implementation("androidx.media3:media3-exoplayer:1.5.1")
+    implementation("androidx.media3:media3-exoplayer-dash:1.5.1")
+    implementation("androidx.media3:media3-ui:1.5.1")
+
+    /*
+* Icons
+* */
+
+    implementation(libs.androidx.material.icons.extended)
+
+    /*Dependency Injection*/
+
+    implementation(libs.hilt.android)
+//    implementation(project(":app:presentation"))
+    implementation(project(":datasource"))
+    implementation(project(":core"))
+//    implementation(project(":datasource"))
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.kotlinx.metadata.jvm)
+
 
 
     testImplementation(libs.junit)

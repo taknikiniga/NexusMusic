@@ -77,7 +77,15 @@ dependencies {
 
 
 
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+
+    /*Dependency Injection*/
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.kotlinx.metadata.jvm)
+
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -1,6 +1,8 @@
 package com.player.music.mp3.musicplayer
 
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,7 +18,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.player.presentation.ui.navigaiton.NexusMusicApp
 import com.player.presentation.ui.theme.NexusMusicTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +36,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+
 }
 

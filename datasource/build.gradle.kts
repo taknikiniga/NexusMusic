@@ -44,6 +44,7 @@ dependencies {
     /*Dependency Injection*/
 
     implementation(libs.hilt.android)
+    implementation(project(":core"))
     kapt(libs.hilt.android.compiler)
     kapt(libs.kotlinx.metadata.jvm)
 

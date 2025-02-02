@@ -11,6 +11,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -28,6 +29,7 @@ import com.player.presentation.screens.pages.main.SearchScreen
 import com.player.presentation.screens.pages.other.SettingScreen
 import com.player.presentation.screens.pages.starter.SplashScreen
 import com.player.presentation.screens.state.AppVM
+import com.player.presentation.screens.state.MusicVM
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,6 +37,13 @@ import kotlinx.coroutines.delay
 fun NexusMusicApp(modifier: Modifier = Modifier) {
     /* Shared Viewmodel*/
     val viewModel = viewModel<AppVM>()
+
+    val musicVm = hiltViewModel<MusicVM>()
+
+    LaunchedEffect(false) {
+        musicVm.getOfflineSongs()
+    }
+
     /*Nav Controller*/
     val navController = rememberNavController()
 
@@ -67,7 +76,7 @@ fun NexusMusicApp(modifier: Modifier = Modifier) {
         /*Nav Graph*/
         NavHost(
             navController = navController,
-            startDestination = Permission.route,
+            startDestination = MusicPlayer,
             modifier = Modifier.padding(innerPadding)
         ) {
 
@@ -97,7 +106,7 @@ fun NexusMusicApp(modifier: Modifier = Modifier) {
             }
 
             composable<Search> { SearchScreen() }
-            composable<MusicPlayer> { PlayerScreen() }
+            composable<MusicPlayer> { PlayerScreen(musicVm) }
             composable<Favorite> { FavoriteScreen() }
             composable<MusicEq> { MusicEqScreen() }
             composable<Setting> { SettingScreen() }
@@ -107,9 +116,5 @@ fun NexusMusicApp(modifier: Modifier = Modifier) {
             }
 
         }
-
-
     }
-
-
 }
